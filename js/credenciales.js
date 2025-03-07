@@ -1,6 +1,6 @@
-const ENV = async()=> {
-    let peticion = await fetch("../environment.js");
-    let data = await peticion.json()
+const ENV = async()=>{ // Obtener todos los usuarios del archivo json
+    let peticion = await fetch("../environment.json");
+    let data = await peticion.json();
     return data
 }
 export const users = await ENV();
@@ -17,4 +17,6 @@ export const validation = (data)=>{ // validar los usuarios del archivo json seg
     }
     return {status: 404, message: "Usuario incorrecto"};
 }
+
+
 

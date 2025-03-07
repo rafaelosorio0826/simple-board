@@ -1,9 +1,9 @@
+@import url(variables.css);
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Poppins', sans-serif;
     display: flex;
@@ -11,23 +11,53 @@ body {
     align-items: center;
     height: 100vh;
     background: linear-gradient(to right, #f7a000, #ffcc33);
-} 
-
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
 }
-
-.login-box {
+#form__login {
     background: white;
     padding: 2rem;
-    border-radius: 30px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    box-shadow: 5px 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
     width: 475px;
     height: 550px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* #dialog__login{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    backdrop-filter: blur(5px);
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(2px);    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    border-color: transparent;
+    color: white;
+} */
+.dialog__header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.div__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.div__title h1 {
+    
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 h2 {
     font-size: 1.5rem;
@@ -36,30 +66,35 @@ h2 {
     align-items: center;
     justify-content: center;
 }
+strong {
+    font-size: 1.2rem;
+}
 .bar {
     width: 8px;
     height: 39px;
     background: #f7a000;
     margin-right: 8px;
 }
-h3{
-    margin: 30px;
-    font-size: 1.2rem;
-}
 p {
     font-size: 0.9rem;
-    color: gray;
+    color: rgb(180, 180, 180);
     margin-bottom: 20px;
 }
-
-form {
-    margin-top: 60px;
+.div__input {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    align-items: center;
+    width: 100%;
+
 }
-label{
+.div__input div {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     text-align: left;
+}
+label {
     font-size: 0.9rem;
     font-weight: bold;
     margin: 5px 0;
@@ -67,19 +102,22 @@ label{
 input {
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px  solid #ccc;
+    border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
+    width: 100%;
 }
 input:hover {
-    
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px  solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
+    border-color: #f7a000;
 }
-button {
+.div__button {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+input[type="submit"] {
     background: #f7a000;
     border: none;
     color: white;
@@ -87,18 +125,21 @@ button {
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%;
 }
-button:hover {
-    background:  #e69500;
+input[type="submit"]:hover {
+    background: #e69500;
 }
-.forgot-password {
+.div__button span {
     margin-top: 10px;
+    font-size: 0.9rem;
+    color: gray;
 }
-.forgot-password a {
+.div__button a {
     color: #f7a000;
     text-decoration: none;
     font-weight: bold;
 }
-.forgot-password a:hover {
+.div__button a:hover {
     text-decoration: underline;
 }

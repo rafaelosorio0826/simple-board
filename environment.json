@@ -1,6 +1,11 @@
 [
     {
-        "USER": "alejandropabon@gmail.com",
+        "USER": "alejandropabon846@gmail.com",
+        "PWD" : "123",
+        "ROL": "Admin"
+    },
+    {
+        "USER": "campus@gmail.com",
         "PWD" : "123",
         "ROL": "Admin"
     },

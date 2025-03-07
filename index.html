@@ -3,27 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sing in</title>
+    <title>Document</title>
     <link rel="stylesheet" href="css/sing-in.css">
+    <script src="js/main.js" defer type="module"></script>
 </head>
 <body>
-    <div class="container">
-      <div class="login-box">
-        <h2><span class="bar"></span>CRUD OPERATIONS</h2> 
-        <h3>SIGN IN</h3>
-        <p> Enter your credentials to access your account</p>
-        <form action="">
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email" placeholder="Enter your email">
-            <label for="password">Password</label>  
-            <input type="password" name="password" id="password" placeholder="Enter your password">
-            <button type="submit">Sign in</button>
-        </form>
-        <p class="forgot-password">Forgot your passwor?<a href="#">Reset Password</a></p></p>
+    <!-- <div class="dialog"> -->
+        <dialog id="dialog__login">
+            <div class="dialog__header">
+                <span id="dialog__login_close">X</span>
+            </div>
+            <div id="dialog__message" class="dialog__main">
 
-      </div>
-
-    </div>
-
+            </div>
+            <div class="dialog__footer"></div>
+        </dialog>
+    <!-- </div> -->
+    <form id="form__login" action="?" method="get">
+        <div class="div__title">
+            <h2><span class="bar"></span>CRUD OPERATIONS</h2> 
+            <strong>SIGN IN</strong>
+            <p>Enter your credentials to access your account</p>
+        </div>
+        <div class="div__input">
+            <div>
+                <label>Email</label>
+                <input type="email" name="email" required placeholder="Enter your email" >
+            </div>
+            <div>
+                <label>Password</label>
+                <input type="password" name="password" required placeholder="Enter your password" >
+            </div>
+        </div>
+        <div class="div__button">
+            <input type="submit" value="SIGN IN">
+            <span>Forgot your password? <a href="#">Reset Password</a></span>
+        </div>
+    </form>
 </body>
 </html>
