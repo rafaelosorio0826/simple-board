@@ -5,59 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Students</title>
     <link rel="stylesheet" href="../css/student.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <script type="module" defer src="../js/student.js"></script>
 </head>
 <body>
     <main>
+        
+        <div class="search__wrapper">
+            <div class="search__container">
+                <input type="text" placeholder="Search...">
+                <i class="fa fa-search"></i>
+            </div>
+            <i class="fa fa-bell notification-icon"></i>
+
+        </div>
+
+
         <div class="div__container">
             <div class="div__header">
                 <h2>Students List</h2>
-                <button class="button__add">ADD NEW STUDENT</button>
+                <button id="add__student" class="button__add">ADD NEW STUDENT</button>
             </div>
-            <dialog id="dialog_add_student">
-                <form action="?" method="post">
-                    <div>
-                        <label>name</label>
-                        <input type="email" name="Email">
-                    </div>
-                    <div>
-                        <label>name</label>
-                        <input type="email" name="Email">
-                    </div>
-                    <div>
-                        <label>name</label>
-                        <input type="email" name="Email">
-                    </div>
-                    <div>
-                        <label>name</label>
-                        <input type="email" name="Email">
-                    </div>
-                </form>
+            <dialog id="dialog__add_student">
+                <div class="dialog__header">
+                    <span id="dialog__close">x</span>
+                </div>
+                <div class="dialog__main">
+                    <form id="form__student" action="?" method="post">
+                        <div>
+                            <label>Name</label>
+                            <input type="text" value="Miguel Angel" pattern="[A-Za-zÑñÁáÉéÍíÓóÚúÜü ]+" name="name">
+                        </div>
+                        <div>
+                            <label>Email</label>
+                            <input type="email" value="ma@gmail.com" name="email">
+                        </div>
+                        <div>
+                            <label>Phone</label>
+                            <input type="text" value="123456789" pattern="[0-9]+" max="10" name="phone">
+                        </div>
+                        <div>
+                            <label>Enroll Number</label>
+                            <input type="number" value="34567890" name="enroll_number">
+                        </div>
+                    </form>
+                </div>
+                <div class="dialog__footer">
+                    <input type="submit" form="form__student" value="Guardar">
+                </div>
+            </dialog>
+            <dialog id="dialog__student_edit">
+                <div class="dialog__header">
+                    <span id="dialog__close_edit">x</span>
+                </div>
+                <div class="dialog__main">
+                    <form id="form__student_edit" action="?" method="post">
+                        <div hidden>
+                            <label>Id</label>
+                            <input type="number" pattern="[0-9]+" name="id" >
+                        </div>
+                        <div>
+                            <label>Name</label>
+                            <input type="text" pattern="[A-Za-zÑñÁáÉéÍíÓóÚúÜü ]+" name="name">
+                        </div>
+                        <div>
+                            <label>Email</label>
+                            <input type="email" name="email">
+                        </div>
+                        <div>
+                            <label>Phone</label>
+                            <input type="text" pattern="[0-9]+" max="10" name="phone">
+                        </div>
+                        <div>
+                            <label>Enroll Number</label>
+                            <input type="number" name="enroll_number">
+                        </div>
+                        <!-- <div>
+                            <label>Date of Admission</label>
+                            <input type="date" name="date_of_admission">
+                        </div> -->
+                    </form>
+                </div>
+                <div class="dialog__footer">
+                    <input type="submit" form="form__student_edit" value="Actualizar">
+                </div>
+            </dialog>
+            <dialog id="dialog__student_delete">
+                <div class="dialog__header">
+                    
+                </div>
+                <div class="dialog__main">
+                    <form id="form__student_delete" action="?" method="post">
+                        <h2>Deseas eliminar la informacion del estidiante</h2>
+                        <input type="text" pattern="[0-9]+" name="id" hidden>
+                        <strong>xxxxxxx</strong>
+                    </form>
+                </div>
+                <div class="dialog__footer">
+                    <input type="submit" data-action="delete" form="form__student_delete" value="yes">
+                    <input type="submit" data-action="close" form="form__student_delete" value="no">
+                </div>
             </dialog>
             <table>
                 <thead>
                     <tr>
-                        <th>Photo</th>
+                        <th class="esquinas">Photo</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
                         <th>Enroll Number</th>
                         <th>Date of Admission</th>
-                        <th>Actions</th>
+                        <th class="esquinas">Actions</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td><img src="#" alt="student"></td>
-                        <td>Karthi</td>
-                        <td>karthi@gmmail.com</td>
-                        <td>7305477760</td>
-                        <td>1234567305477760</td>
-                        <td>08-Dec, 2021</td>
-                        <td class="td__actions">
-                            <span class="span__edit">✏️</span>
-                            <span class="span__delete">🗑️</span>
-                        </td>
-                    </tr>
+                <tbody id="table__student">
+                    
                 </tbody>
             </table>
         </div>
